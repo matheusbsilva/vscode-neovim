@@ -1,8 +1,16 @@
-- [Features](#features)
-  - [Modern Devtools Integration](#modern-devtools-integration)
-  - [Powerful Text Edit Plugins](#powerful-text-edit-plugins)
-  - [Tailored for Data Science](#tailored-for-data-science)
-  - [Seamless Integration with Vscode](#seamless-integration-with-vscode)
+- [Getting Started](#getting-started)
+- [Dependencies](#dependencies)
+  - [general purpose deps](#general-purpose-deps)
+- [Keymaps](#keymaps)
+  - [VSCode Neovim keymaps](#vscode-neovim-keymaps)
+    - [LSP Keymaps](#lsp-keymaps)
+    - [Search/Find Keymaps](#searchfind-keymaps)
+    - [UI Toggle Keymaps](#ui-toggle-keymaps)
+    - [Window Management](#window-management)
+    - [Tab Management](#tab-management)
+    - [Navigation](#navigation)
+    - [REPL Keymaps (R/Rmd)](#repl-keymaps-rrmd)
+    - [REPL Keymaps (Python)](#repl-keymaps-python)
   - [Text Edit keymaps](#text-edit-keymaps)
     - [Align text keymaps](#align-text-keymaps)
     - [Comment keymaps](#comment-keymaps)
@@ -60,8 +68,7 @@ to use neovim both in the terminal and in vscode, I suggest creating two
 folders in `~/.config` or your specified `$XDG_CONFIG` path. One is
 `~/.config/nvim`, which uses the default configuration in the `main` repo, and
 the other is `~/.config/vscode-neovim`, which uses the configuration in the
-`vscode` branch. This takes advantage of the `NVIM_APPNAME` feature in `nvim
-0.9`.
+`vscode` branch. This takes advantage of the `NVIM_APPNAME` feature in `nvim 0.9`.
 
 Then, Set `vscode-neovim.NVIM_APPNAME` to `vscode-neovim` in vscode settings.
 
