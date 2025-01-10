@@ -99,7 +99,6 @@ and wild!
 
 # Dependencies
 
-
 ## general purpose deps
 
 2. A c compiler. Required to install treesitter parsers.
@@ -119,8 +118,113 @@ to find all keymaps.
 
 ## VSCode Neovim keymaps
 
-There are keymaps configured specifically for vscode. Please check for the file
-[vscode.lua](./lua/conf/vscode.lua) for details.
+These keymaps are specifically designed for VSCode integration:
+
+### LSP Keymaps
+
+| Mode | LHS          | RHS/Functionality         |
+| ---- | ------------ | ------------------------- |
+| n    | `<Leader>xr` | Find references           |
+| n    | `<Leader>xd` | Show problems/diagnostics |
+| n    | `gr`         | Go to references          |
+| n    | `<Leader>ln` | Rename symbol             |
+| n    | `<Leader>lf` | Format document           |
+| n    | `<Leader>la` | Quick fix                 |
+| n    | `<Leader>lr` | Refactor                  |
+| n    | `<C-w>]`     | Reveal definition aside   |
+| n    | `<Leader>w]` | Reveal definition aside   |
+| v    | `<Leader>lf` | Format selection          |
+| v    | `<Leader>la` | Quick fix                 |
+| v    | `<Leader>lr` | Refactor                  |
+
+### Search/Find Keymaps
+
+| Mode | LHS          | RHS/Functionality       |
+| ---- | ------------ | ----------------------- |
+| n    | `<Leader>fR` | Find in files (ripgrep) |
+| n    | `<Leader>fg` | Find in files (ripgrep) |
+| n    | `<Leader>fc` | Show commands           |
+| n    | `<Leader>ff` | Quick open              |
+| v    | `<Leader>fc` | Show commands           |
+
+### UI Toggle Keymaps
+
+| Mode | LHS          | RHS/Functionality    |
+| ---- | ------------ | -------------------- |
+| n    | `<Leader>tp` | Toggle panel         |
+| n    | `<Leader>ts` | Toggle sidebar       |
+| n    | `<Leader>ta` | Toggle auxiliary bar |
+| n    | `<Leader>tt` | Toggle terminal      |
+
+### Window Management
+
+| Mode | LHS          | RHS/Functionality          |
+| ---- | ------------ | -------------------------- |
+| n    | `<Leader>ww` | Focus next group           |
+| n    | `<Leader>wp` | Focus previous group       |
+| n    | `<Leader>wq` | Close active editor        |
+| n    | `<Leader>wc` | Close active editor        |
+| n    | `<Leader>wo` | Join all groups            |
+| n    | `<Leader>w=` | Even editor widths         |
+| n    | `<Leader>wh` | Focus left group           |
+| n    | `<Leader>wj` | Focus below group          |
+| n    | `<Leader>wk` | Focus above group          |
+| n    | `<Leader>wl` | Focus right group          |
+| n    | `<Leader>wH` | Move active group left     |
+| n    | `<Leader>wJ` | Move active group down     |
+| n    | `<Leader>wK` | Move active group up       |
+| n    | `<Leader>wL` | Move active group right    |
+| n    | `<Leader>wu` | Move editor to above group |
+| n    | `<Leader>wd` | Move editor to below group |
+| n    | `<Leader>wb` | Move editor to left group  |
+| n    | `<Leader>wf` | Move editor to right group |
+| n    | `<Leader>ws` | Split vertically           |
+| n    | `<Leader>wv` | Split horizontally         |
+| n    | `<Leader>w+` | Increase height            |
+| n    | `<Leader>w-` | Decrease height            |
+| n    | `<Leader>w>` | Increase width             |
+| n    | `<Leader>w<` | Decrease width             |
+
+### Tab Management
+
+| Mode | LHS                | RHS/Functionality |
+| ---- | ------------------ | ----------------- |
+| n    | `<Leader><Tab>o`   | Close other tabs  |
+| n    | `<Leader><Tab>n`   | New tab           |
+| n    | `<Leader><Tab>c`   | Close tab         |
+| n    | `<Leader><Tab>f`   | First tab         |
+| n    | `<Leader><Tab>l`   | Last tab          |
+| n    | `<Leader><Tab>[`   | Previous tab      |
+| n    | `<Leader><Tab>]`   | Next tab          |
+| n    | `<Leader><Tab>1-9` | Switch to tab 1-9 |
+
+### Navigation
+
+| Mode | LHS  | RHS/Functionality      |
+| ---- | ---- | ---------------------- |
+| n    | `]r` | Next reference         |
+| n    | `[r` | Previous reference     |
+| n    | `]d` | Next diagnostic        |
+| n    | `[d` | Previous diagnostic    |
+| n    | `]q` | Next search result     |
+| n    | `[q` | Previous search result |
+
+### REPL Keymaps (R/Rmd)
+
+| Mode | LHS                | RHS/Functionality    |
+| ---- | ------------------ | -------------------- |
+| v    | `<LocalLeader>s`   | Run selection        |
+| n    | `<LocalLeader>sc`  | Run current chunk    |
+| n    | `<LocalLeader>sgg` | Run all chunks above |
+
+### REPL Keymaps (Python)
+
+| Mode | LHS                | RHS/Functionality           |
+| ---- | ------------------ | --------------------------- |
+| n    | `<LocalLeader>ss`  | Run selection interactively |
+| v    | `<LocalLeader>s`   | Run selection interactively |
+| n    | `<LocalLeader>sc`  | Run current cell            |
+| n    | `<LocalLeader>sgg` | Run all cells above         |
 
 ## Text Edit keymaps
 
