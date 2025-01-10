@@ -14,26 +14,46 @@ local function opts_desc(desc, callback)
     }
 end
 
+if pcall(require, 'vscode.notify') then
+    vim.notify = require('vscode').notify
+end
+
+-- NOTE: this is very  IMPORTANT! Setting cmdheight = 0 (what I use in normal
+-- nvim sessions) causes command outputs to popup the VSCode bottom panel,
+-- creating annoying experience. Set cmdheight = 1 to prevent this behavior and
+-- maintain a smoother workflow.
+vim.o.cmdheight = 1
+
 --copied from https://github.com/vscode-neovim/vscode-neovim/blob/master/vim/vscode-window-commands.vim
 local function split(direction)
+    local vscode = require 'vscode'
     return function()
         if direction == 'v' then
-            vim.cmd.call [[VSCodeCall('workbench.action.splitEditorDown')]]
+            vscode.call 'workbench.action.splitEditorDown'
         else
-            vim.cmd.call [[VSCodeCall('workbench.action.splitEditorRight')]]
+            vscode.call 'workbench.action.splitEditorRight'
         end
     end
 end
 
 local function manage_height_or_width(position, direction)
+    local vscode = require 'vscode'
     local action = {
         w = {
-            ['+'] = [[VSCodeNotify('workbench.action.increaseViewWidth')]],
-            ['-'] = [[VSCodeNotify('workbench.action.decreaseViewWidth')]],
+            ['+'] = function()
+                vscode.call 'workbench.action.increaseViewWidth'
+            end,
+            ['-'] = function()
+                vscode.call 'workbench.action.decreaseViewWidth'
+            end,
         },
         h = {
-            ['+'] = [[VSCodeNotify('workbench.action.increaseViewHeight')]],
-            ['-'] = [[VSCodeNotify('workbench.action.decreaseViewHeight')]],
+            ['+'] = function()
+                vscode.call 'workbench.action.increaseViewHeight'
+            end,
+            ['-'] = function()
+                vscode.call 'workbench.action.decreaseViewHeight'
+            end,
         },
     }
     return function()
@@ -44,7 +64,7 @@ local function manage_height_or_width(position, direction)
             count = 1
         end
         for _ = 1, count do
-            vim.cmd.call(action[position][direction])
+            action[position][direction]()
         end
     end
 end
@@ -60,11 +80,11 @@ vim.filetype.add {
 }
 
 local function notify(cmd)
-    return string.format("<cmd>call VSCodeNotify('%s')<CR>", cmd)
+    return string.format("<cmd>lua require'vscode'.action('%s')<CR>", cmd)
 end
 
 local function v_notify(cmd)
-    return string.format("<cmd>call VSCodeNotify('%s')<CR>", cmd)
+    return string.format("<cmd>lua require'vscode'.action('%s')<CR>", cmd)
 end
 
 -- LSP related keymaps
