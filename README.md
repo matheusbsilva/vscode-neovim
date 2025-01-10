@@ -20,82 +20,66 @@
 - [Other Notes](#other-notes)
 - [Discussion](#discussion)
 
-# Features
+This configuration is derived from my [main Neovim
+configuration](https://github.com/milanglacier/nvim).
 
-## Modern Devtools Integration
+The evolution of my VSCode-Neovim and main Neovim configurations spans several
+years.
 
-Built on modern devtools including LSP and treesitter. Treesitter delivers
-AST-level highlighting, text objects, and navigations, while LSP offers
-features like auto completion, go to definition and reference, and code
-diagnostics. By harnessing the power of both Ctags and LSP, this configuration
-brings a harmonic blend of old-school and modern development tools.
+Initially, both configurations were maintained within the same codebase. I
+began tweaking my Neovim configuration during the era when `vim-plug` was the
+predominant plugin manager, even when `packer.nvim` was a new thing. Over time,
+I grew weary of writing workaround code scattered throughout the configuration,
+conditionally wrapped with `if vim.g.vscode`.
 
-## Powerful Text Edit Plugins
+Although `lazy.nvim` now offers built-in conditional plugin activation based on
+`vim.g.vscode`, I prefer not to rely heavily on such sugar. Given the
+unpredictable nature of future developments, I decided to separate the
+VSCode-Neovim configuration into its own branch, maintaining a cleaner main
+Neovim configuration. This approach, which I followed for about two years,
+involved periodic merges from the main branch approximately every few months.
 
-Vim's exceptional text editing capabilities are further amplified by a host of
-powerful plugins focusing on text editing. (Remember it is pure text editing
-makes vim vim.)
+Upon analyzing both configurations, I noticed that my main Neovim configuration
+had long since stopped adding new text-editing features—the primary
+functionality shared between VSCode-Neovim and the main configuration. Instead,
+I focused on enhancing the UI/UX of my main Neovim setup, developing plugins
+like [minuet-ai.nvim](https://github.com/milanglacier/minuet-ai.nvim) for
+LLM-based code completion and
+[yarepl.nvim](https://github.com/milanglacier/yarepl.nvim) for REPL
+management with tools like iPython, Radian, and aider-chat.
 
-## Tailored for Data Science
+Given that VSCode-Neovim's scope remains strictly limited to text-editing
+capabilities, maintaining both configurations in the same repository as
+separate branches became unnecessary. This realization led to my decision to
+create this new repository.
 
-This configuration is specifically tailored toward data science toolsets,
-including python, R, SQL, Latex, rmarkdown, and quarto.
+# Getting Started
 
-## Seamless Integration with Vscode
-
-Curated configuration working together with vscode thanks to
-[vscode-neovim](https://github.com/vscode-neovim/vscode-neovim). Access all the
-familiar neovim keybindings, including translations of equivalent commands in
-vscode, even when working with complex graphical content like Jupyter
-notebooks. And many neovim plugins, such as treesitter, can be embedded
-seamlessly in vscode, allowing for a smooth and uninterrupted workflow.
-
-**NOTE**: If you plan to use this configuration with `vscode-neovim`, please
-use the `vscode` branch. If you wish to use neovim both in the terminal
-and in vscode, we suggest creating two folders in `~/.config` or your specified
-`$XDG_CONFIG` path. One is `~/.config/nvim`, which uses the default
-configuration in the `master` branch, and the other is
-`~/.config/vscode-neovim`, which uses the configuration in the `vscode`
-branch. This takes advantage of the `NVIM_APPNAME` feature in `nvim 0.9`.
+**NOTE**: If you plan to use this configuration with `vscode-neovim` and wish
+to use neovim both in the terminal and in vscode, I suggest creating two
+folders in `~/.config` or your specified `$XDG_CONFIG` path. One is
+`~/.config/nvim`, which uses the default configuration in the `main` repo, and
+the other is `~/.config/vscode-neovim`, which uses the configuration in the
+`vscode` branch. This takes advantage of the `NVIM_APPNAME` feature in `nvim
+0.9`.
 
 Then, Set `vscode-neovim.NVIM_APPNAME` to `vscode-neovim` in vscode settings.
 
-## Be Wild
+Below are recommended `vscode-neovim` settings in your `settings.json` file.
 
-Randomly select a theme from a curated list each time you start up and
-automatically switches between day and night themes at scheduled time.
-Additionally, the displayed verses on the welcome screen is also randomized with
-each launch. With neovim, you can have a fresh experience every time. Be casual
-and wild!
-
-# Showcase
-
-![welcome-screen](assets/welcome-screen.png)
-
-- The welcome screen displays two verses randomly selected from my curated
-  collection. You can select new verses and color schemes at random or access
-  frequently used commands from this screen.
-
-![lsp](./assets/lsp-ctags.png)
-
-- This screenshot showcases writing Lua code with smart autocompletion through
-  both language server (LSP) and universal-ctags (ctags). This combination
-  seamlessly blends old-school and modern tools. The bottom window shows the
-  occurrence of referenced symbols that you specify (via `lsp find references`), while the right window shows the symbol outline of the current
-  file (via `lsp document symbols`).
-
-![literate-programming](./assets/literate-programming.png)
-
-- This screenshot demonstrates the use of literate programming in neovim, which
-  is highly beneficial for data science workflows. You can write code in both
-  Python and R with intelligent autocompletion from both LSP and Ctags in quarto
-  or markdown files. Moreover, you can send your code to both R and Python REPL
-  simultaneously.
-
-![dap](./assets/dap-python.png)
-
-- This screenshot demonstrates how to debug Python program in neovim. Stepping through
-  the code and watching variables and stack frames, just like in vscode.
+```json
+{
+  "vscode-neovim.compositeKeys": {
+    "jk": {
+      "command": "vscode-neovim.escape"
+    }
+  },
+  "extensions.experimental.affinity": {
+    "asvetliakov.vscode-neovim": 1
+  }, // run those plugins in a separate process for performance
+  "vscode-neovim.NVIM_APPNAME": "vscode-neovim"
+}
+```
 
 # Dependencies
 
