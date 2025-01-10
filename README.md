@@ -47,12 +47,12 @@ VSCode-Neovim configuration into its own branch, maintaining a cleaner main
 Neovim configuration. This approach, which I followed for about two years,
 involved periodic merges from the main branch approximately every few months.
 
-Upon analyzing both configurations, I noticed that my main Neovim configuration
-had long since stopped adding new text-editing features—the primary
-functionality shared between VSCode-Neovim and the main configuration. Instead,
-I focused on enhancing the UI/UX of my main Neovim setup, developing plugins
-like [minuet-ai.nvim](https://github.com/milanglacier/minuet-ai.nvim) for
-LLM-based code completion and
+Recently, upon analyzing both configurations, I noticed that my main Neovim
+configuration had long since stopped adding new text-editing features—the
+primary functionality shared between VSCode-Neovim and the main configuration.
+Instead, I focused on enhancing the UI/UX of my main Neovim setup, developing
+plugins like [minuet-ai.nvim](https://github.com/milanglacier/minuet-ai.nvim)
+for LLM-based code completion and
 [yarepl.nvim](https://github.com/milanglacier/yarepl.nvim) for REPL
 management with tools like iPython, Radian, and aider-chat.
 
@@ -102,10 +102,6 @@ that I used frequently.
 
 The `<Leader>` key is `<Space>`,
 the `<LocalLeader>` key is `<Space><Space>` or `<Backslash>`.
-
-In case you forget the keymaps
-you can always use `<Leader>fk` (`:FzfLua keymaps` or `:Telescope keymaps`)
-to find all keymaps.
 
 ## VSCode Neovim keymaps
 
