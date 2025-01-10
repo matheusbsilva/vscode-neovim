@@ -26,8 +26,8 @@ vim.o.cmdheight = 1
 
 --copied from https://github.com/vscode-neovim/vscode-neovim/blob/master/vim/vscode-window-commands.vim
 local function split(direction)
-    local vscode = require 'vscode'
     return function()
+        local vscode = require 'vscode'
         if direction == 'v' then
             vscode.call 'workbench.action.splitEditorDown'
         else
@@ -37,7 +37,10 @@ local function split(direction)
 end
 
 local function manage_height_or_width(position, direction)
-    local vscode = require 'vscode'
+    local ok, vscode = pcall(require, 'vscode')
+    if not ok then
+        return function() end
+    end
     local action = {
         w = {
             ['+'] = function()
