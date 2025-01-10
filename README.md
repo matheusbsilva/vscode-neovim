@@ -145,6 +145,17 @@ These keymaps are specifically designed for VSCode integration:
 
 ### Window Management
 
+In VSCode and Vim, window management operates differently. While Vim allows
+multiple windows within a tab, VSCode allows multiple tabs within a window.
+
+VSCode offers two distinct sets of commands for organizing your workspace:
+
+"Move Active Group" commands rearrange the window layout, affecting all
+associated tabs within that window.
+
+"Move Editor" commands allow individual tabs to be transferred between
+different windows.
+
 | Mode | LHS          | RHS/Functionality          |
 | ---- | ------------ | -------------------------- |
 | n    | `<Leader>ww` | Focus next group           |
