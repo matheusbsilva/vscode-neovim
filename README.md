@@ -285,6 +285,7 @@ The following keymaps rely on [vim-textobj-chainmember](https://github.com/D4KU/
 | ---- | ------- | ------------------------------------------------- |
 | n    | `g<CR>` | Jump to the start of the selected treesitter node |
 | n    | `g<BS>` | Jump to the end of the selected treesitter node   |
+| vo   | `<CR>`  | Select region based on treesitter node            |
 
 # Other Notes
 
