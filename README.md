@@ -60,6 +60,50 @@ branch. This takes advantage of the `NVIM_APPNAME` feature in `nvim 0.9`.
 
 Then, Set `vscode-neovim.NVIM_APPNAME` to `vscode-neovim` in vscode settings.
 
+## Be Wild
+
+Randomly select a theme from a curated list each time you start up and
+automatically switches between day and night themes at scheduled time.
+Additionally, the displayed verses on the welcome screen is also randomized with
+each launch. With neovim, you can have a fresh experience every time. Be casual
+and wild!
+
+# Showcase
+
+![welcome-screen](assets/welcome-screen.png)
+
+- The welcome screen displays two verses randomly selected from my curated
+  collection. You can select new verses and color schemes at random or access
+  frequently used commands from this screen.
+
+![lsp](./assets/lsp-ctags.png)
+
+- This screenshot showcases writing Lua code with smart autocompletion through
+  both language server (LSP) and universal-ctags (ctags). This combination
+  seamlessly blends old-school and modern tools. The bottom window shows the
+  occurrence of referenced symbols that you specify (via `lsp find references`), while the right window shows the symbol outline of the current
+  file (via `lsp document symbols`).
+
+![literate-programming](./assets/literate-programming.png)
+
+- This screenshot demonstrates the use of literate programming in neovim, which
+  is highly beneficial for data science workflows. You can write code in both
+  Python and R with intelligent autocompletion from both LSP and Ctags in quarto
+  or markdown files. Moreover, you can send your code to both R and Python REPL
+  simultaneously.
+
+![dap](./assets/dap-python.png)
+
+- This screenshot demonstrates how to debug Python program in neovim. Stepping through
+  the code and watching variables and stack frames, just like in vscode.
+
+# Dependencies
+
+
+## general purpose deps
+
+2. A c compiler. Required to install treesitter parsers.
+
 # Keymaps
 
 NOTE: this only includes keymaps defined by myself,
@@ -70,7 +114,7 @@ The `<Leader>` key is `<Space>`,
 the `<LocalLeader>` key is `<Space><Space>` or `<Backslash>`.
 
 In case you forget the keymaps
-you can always use `<Leader>fk` (`:Telescope keymaps`)
+you can always use `<Leader>fk` (`:FzfLua keymaps` or `:Telescope keymaps`)
 to find all keymaps.
 
 ## VSCode Neovim keymaps
@@ -237,10 +281,10 @@ The following keymaps rely on [vim-textobj-chainmember](https://github.com/D4KU/
 
 ### Miscellenous
 
-| Mode | LHS    | RHS/Functionality                                 |
-| ---- | ------ | ------------------------------------------------- |
-| v    | `<CR>` | Expand the region based on treesitter nodes range |
-| o    | `<CR>` | Expand the region based on treesitter node range  |
+| Mode | LHS     | RHS/Functionality                                 |
+| ---- | ------- | ------------------------------------------------- |
+| n    | `g<CR>` | Jump to the start of the selected treesitter node |
+| n    | `g<BS>` | Jump to the end of the selected treesitter node   |
 
 # Other Notes
 
