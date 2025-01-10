@@ -18,7 +18,7 @@ if pcall(require, 'vscode.notify') then
     vim.notify = require('vscode').notify
 end
 
--- NOTE: this is very  IMPORTANT! Setting cmdheight = 0 (what I use in normal
+-- NOTE: this is very IMPORTANT! Setting cmdheight = 0 (what I use in normal
 -- nvim sessions) causes command outputs to popup the VSCode bottom panel,
 -- creating annoying experience. Set cmdheight = 1 to prevent this behavior and
 -- maintain a smoother workflow.
