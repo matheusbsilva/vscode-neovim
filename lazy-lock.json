@@ -1,13 +1,13 @@
 {
-  "dial.nvim": { "branch": "master", "commit": "46b4375e84e8eb771129bff6b2b1e47746601ef9" },
+  "dial.nvim": { "branch": "master", "commit": "34bbd9c387c358190e61ce71017faad3dffa7a74" },
   "dsf.vim": { "branch": "main", "commit": "b88e64d0987ab3ad7e7aebf94ded656d70c924e3" },
   "lazy.nvim": { "branch": "main", "commit": "d8f26efd456190241afd1b0f5235fe6fdba13d4a" },
   "mason.nvim": { "branch": "main", "commit": "e2f7f9044ec30067bc11800a9e266664b88cda22" },
-  "mini.nvim": { "branch": "main", "commit": "890db26e37bb28d8a95f05570dd0d9fa757b698b" },
+  "mini.nvim": { "branch": "main", "commit": "4446e834c30c799627d65691c73d59638e5c965f" },
   "nvim-treehopper": { "branch": "master", "commit": "e87002968983ed23836dfad53bcf023e609db42d" },
-  "nvim-treesitter": { "branch": "master", "commit": "6df6e80417b58abe377c90f5e3f7fe94cf7dfc55" },
+  "nvim-treesitter": { "branch": "master", "commit": "07bd1b53bf465e42d53253b48b7437892d6c45e8" },
   "nvim-treesitter-textobjects": { "branch": "master", "commit": "ad8f0a472148c3e0ae9851e26a722ee4e29b1595" },
-  "plenary.nvim": { "branch": "master", "commit": "2d9b06177a975543726ce5c73fca176cedbffe9d" },
+  "plenary.nvim": { "branch": "master", "commit": "3707cdb1e43f5cea73afb6037e6494e7ce847a66" },
   "substitute.nvim": { "branch": "main", "commit": "97f49d16f8eea7967d41db4f657dd63af53eeba1" },
   "vim-easy-align": { "branch": "master", "commit": "9815a55dbcd817784458df7a18acacc6f82b1241" },
   "vim-exchange": { "branch": "master", "commit": "d6c1e9790bcb8df27c483a37167459bbebe0112e" },
@@ -19,5 +19,5 @@
   "vim-textobj-between": { "branch": "master", "commit": "fa7723c08b1f2d55e1a30ba720d2fd4db27cb1e8" },
   "vim-textobj-chainmember": { "branch": "main", "commit": "f14a151c42a14e18a298aec7d943a3c7f43161dc" },
   "vim-textobj-user": { "branch": "master", "commit": "41a675ddbeefd6a93664a4dc52f302fe3086a933" },
-  "yarepl.nvim": { "branch": "main", "commit": "f829ea02afac2195a983e6cc5d4d3e0b25203aa1" }
+  "yarepl.nvim": { "branch": "main", "commit": "905e6ac32a891bc650c71bab1a62ffb65e04b2c2" }
 }

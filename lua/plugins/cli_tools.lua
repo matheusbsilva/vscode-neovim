@@ -14,7 +14,7 @@ return {
     },
     {
         'milanglacier/yarepl.nvim',
-        cmd = { 'REPLStart' },
+        event = 'VeryLazy',
         config = function()
             local yarepl = require 'yarepl'
             local aider = require 'yarepl.extensions.aider'
