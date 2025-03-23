@@ -15,6 +15,7 @@ return {
     {
         'milanglacier/yarepl.nvim',
         event = 'VeryLazy',
+        lazy = vim.fn.argc(-1) == 0,
         config = function()
             local yarepl = require 'yarepl'
             local aider = require 'yarepl.extensions.aider'
@@ -120,6 +121,15 @@ return {
             })
             keymap('n', '<Leader>aq', '<Plug>(AiderSendExit)', {
                 desc = 'Send exit to aider',
+            })
+            keymap('n', '<Leader>ama', '<Plug>(AiderSendAskMode)', {
+                desc = 'Switch aider to ask mode',
+            })
+            keymap('n', '<Leader>amc', '<Plug>(AiderSendCodeMode)', {
+                desc = 'Switch aider to code mode',
+            })
+            keymap('n', '<Leader>amA', '<Plug>(AiderSendArchMode)', {
+                desc = 'Switch aider to architect mode',
             })
             keymap('n', '<Leader>ag', '<cmd>AiderSetPrefix<cr>', {
                 desc = 'set aider prefix',
