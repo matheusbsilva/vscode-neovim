@@ -23,7 +23,7 @@ vim.o.laststatus = 3
 vim.o.cmdheight = 0
 
 vim.o.clipboard = 'unnamedplus'
-vim.o.completeopt = 'menu,menuone,noselect'
+vim.o.completeopt = 'menu,menuone,noselect,fuzzy'
 vim.o.wildoptions = 'pum,tagfile,fuzzy'
 
 -- don't fold any text at startup
