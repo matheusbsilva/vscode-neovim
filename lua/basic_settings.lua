@@ -35,7 +35,7 @@ vim.o.foldlevelstart = 99
 -- nvim-navic (winbar lsp symbol)
 vim.o.updatetime = 2000
 
-vim.g.mapleader = ' '
+vim.g.mapleader = ','
 vim.g.maplocalleader = [[  ]]
 
 vim.o.mouse = 'a'

@@ -80,6 +80,12 @@ return {
             keymap('', 'F', '<Plug>Sneak_F', {})
             keymap('', 't', '<Plug>Sneak_t', {})
             keymap('', 'T', '<Plug>Sneak_T', {})
+            keymap('n', '<Leader>s', '<Plug>Sneak_s', {})
+            keymap('n', '<Leader>S', '<Plug>Sneak_S', {})
+            keymap('v', '<Leader>s', '<Plug>Sneak_s', {})
+            keymap('v', '<Leader>S', '<Plug>Sneak_S', {})
+            keymap('o', '<Leader>s', '<Plug>Sneak_s', {})
+            keymap('o', '<Leader>S', '<Plug>Sneak_S', {})
         end,
     },
     {

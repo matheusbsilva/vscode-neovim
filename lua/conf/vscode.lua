@@ -94,6 +94,7 @@ end
 keymap('n', '<Leader>xr', notify 'references-view.findReferences', opts) -- language references
 keymap('n', '<Leader>xd', notify 'workbench.actions.view.problems', opts) -- language diagnostics
 keymap('n', 'gr', notify 'editor.action.goToReferences', opts)
+keymap('n', 'gd', notify 'editor.action.goToDeclaration', opts)
 keymap('n', '<Leader>ln', notify 'editor.action.rename', opts)
 keymap('n', '<Leader>lf', notify 'editor.action.formatDocument', opts)
 keymap('n', '<Leader>la', notify 'editor.action.quickFix', opts) -- language code actions
