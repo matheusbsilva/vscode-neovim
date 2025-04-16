@@ -69,26 +69,6 @@ return {
         end,
     },
     {
-        'justinmk/vim-sneak',
-        event = 'VeryLazy',
-        init = function()
-            vim.g['sneak#label'] = 1
-
-            vim.g['sneak#use_ic_scs'] = 1
-
-            keymap('', 'f', '<Plug>Sneak_f', {})
-            keymap('', 'F', '<Plug>Sneak_F', {})
-            keymap('', 't', '<Plug>Sneak_t', {})
-            keymap('', 'T', '<Plug>Sneak_T', {})
-            keymap('n', '<Leader>s', '<Plug>Sneak_s', {})
-            keymap('n', '<Leader>S', '<Plug>Sneak_S', {})
-            keymap('v', '<Leader>s', '<Plug>Sneak_s', {})
-            keymap('v', '<Leader>S', '<Plug>Sneak_S', {})
-            keymap('o', '<Leader>s', '<Plug>Sneak_s', {})
-            keymap('o', '<Leader>S', '<Plug>Sneak_S', {})
-        end,
-    },
-    {
         'junegunn/vim-easy-align',
         event = 'VeryLazy',
         init = function()
@@ -134,17 +114,6 @@ return {
         end,
         config = function()
             require('substitute').setup {}
-        end,
-    },
-    {
-        'andymass/vim-matchup',
-        event = 'VeryLazy',
-        init = function()
-            -- don't need this binding, remap them to some keys not likely to trigger
-            keymap('n', '%', '<plug>(matchup-z%)', {})
-            keymap('o', '%', '<plug>(matchup-z%)', {})
-            keymap('x', '%', '<plug>(matchup-z%)', {})
-            keymap('i', '%', '<plug>(matchup-c_g%)', {})
         end,
     },
     { 'tommcdo/vim-exchange', event = 'VeryLazy' },
